@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcceptOrder.cs" />
     <Compile Include="AddClient.cs" />
     <Compile Include="GetClientsDetails.cs" />
     <Compile Include="API.cs" />

@@ -83,7 +83,25 @@ namespace WHMCS_API
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 
         }
-       
+
+        public AcceptOrder AcceptOrder(int orderID)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", "AcceptOrder" },
+                { "orderid", orderID.ToString() },
+            };
+
+            string req = _call.MakeCall(data);
+            JObject result = JObject.Parse(_call.MakeCall(data));
+
+            if (result["result"].ToString() == "success")
+                return JsonConvert.DeserializeObject<AcceptOrder>(req, settings);
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+        }
+
+
         public GetClientsDetails.GetClientsDetails GetClientsDetails(int ClientID = -1, string ClientEmail = "", bool Stats = false)
         {
             if (ClientID == -1 && ClientEmail == "")
