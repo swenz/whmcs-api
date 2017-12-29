@@ -78,7 +78,7 @@ namespace WHMCS_API
             JObject result = JObject.Parse(_call.MakeCall(data));
 
             if (result["result"].ToString() == "success")
-                return Convert.ToInt32(result["clientid"]);
+                return result.Value<int>("clientid");
             else
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
 

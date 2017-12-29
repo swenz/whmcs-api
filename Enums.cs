@@ -29,7 +29,7 @@ namespace WHMCS_API
             [StringValue("city")] City,
             [StringValue("state")] State,
             [StringValue("postcode")] Postcode,
-            [StringValue("countrycode")] CountryCode,
+            [StringValue("country")] CountryCode,
             [StringValue("phonenumber")] PhoneNumber,
             [StringValue("password2")] Password,
             [StringValue("noemail")] NoEmail,
