@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcceptOrder.cs" />
+    <Compile Include="AcceptOrderResponse.cs" />
+    <Compile Include="AddCredit.cs" />
+    <Compile Include="UpdateClient.cs" />
     <Compile Include="AddClient.cs" />
     <Compile Include="GetClientsDetails.cs" />
     <Compile Include="API.cs" />

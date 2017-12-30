@@ -52,6 +52,47 @@ namespace WHMCS_API
             [StringValue("skipvalidation")] SkipValidation
         }
 
+
+        public enum AddCreditParams
+        {
+            [StringValue("clientid")] ClientId,
+            [StringValue("description")] Description,
+            [StringValue("amount")] Amount,
+        }
+
+        public enum UpdateClientParams
+        {
+            [StringValue("clientid")] ClientId,
+            [StringValue("firstname")] Firstname,
+            [StringValue("lastname")] Lastname,
+            [StringValue("email")] Email,
+            [StringValue("address1")] Address1,
+            [StringValue("city")] City,
+            [StringValue("state")] State,
+            [StringValue("postcode")] Postcode,
+            [StringValue("country")] CountryCode,
+            [StringValue("phonenumber")] PhoneNumber,
+            [StringValue("password2")] Password,
+            [StringValue("noemail")] NoEmail,
+            [StringValue("companyname")] CompanyName,
+            [StringValue("address2")] Address2,
+            [StringValue("securityqid")] SecurityQuestionID,
+            [StringValue("securityqans")] SecurityQuestionAnswer,
+            [StringValue("cardtype")] CardType,
+            [StringValue("cardnum")] CardNumber,
+            [StringValue("expdate")] ExpiricyDate,
+            [StringValue("startdate")] StartDate,
+            [StringValue("issuenumber")] IssueNumber,
+            [StringValue("cvv")] CVV,
+            [StringValue("currency")] Currency,
+            [StringValue("groupid")] GroupID,
+            [StringValue("customfields")] CustomFields,
+            [StringValue("language")] Language,
+            [StringValue("clientip")] ClientIP,
+            [StringValue("notes")] Notes,
+            [StringValue("skipvalidation")] SkipValidation
+        }
+
         public enum GetClientsDetailsParams
         {
             [StringValue("clientid")] ClientID,
@@ -203,6 +244,7 @@ namespace WHMCS_API
         {
             [StringValue("ValidateLogin")] ValidateLogin,
             [StringValue("DomainWhois")] DomainWhois,
+            [StringValue("UpdateClient")] UpdateClient,
             [StringValue("AddClient")] AddClient,
             [StringValue("GetClientsDetails")] GetClientsDetails,
             [StringValue("GetOrders")] GetOrders,
@@ -213,7 +255,8 @@ namespace WHMCS_API
             [StringValue("GetClientsDomains")] GetClientsDomains,
             [StringValue("ModuleChangePw")] ModuleChangePassword,
             [StringValue("ModuleCustom")] ModuleCustomCommand,
-			[StringValue("UpdateClientProduct")] UpdateClientProduct
+            [StringValue("AddCredit")] AddCredit,
+            [StringValue("UpdateClientProduct")] UpdateClientProduct
         }
     }
 

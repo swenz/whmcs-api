@@ -81,7 +81,46 @@ namespace WHMCS_API
                 return result.Value<int>("clientid");
             else
                 throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+        }
 
+        public int AddCredit(AddCredit addCredit)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", APIEnums.Actions.AddCredit.ToString() }
+            };
+
+            //Processes all the data in ClientInfo model into the data NameValueCollection
+            foreach (string key in addCredit.CreditInfo)
+            {
+                data.Add(key, addCredit.CreditInfo[key]);
+            }
+
+            JObject result = JObject.Parse(_call.MakeCall(data));
+
+            if (result["result"].ToString() == "success")
+                return result.Value<int>("clientid");
+            else
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
+        }
+
+        public void UpdateClient(UpdateClient clientInfo)
+        {
+            NameValueCollection data = new NameValueCollection()
+            {
+                { "action", APIEnums.Actions.UpdateClient.ToString() }
+            };
+
+            //Processes all the data in ClientInfo model into the data NameValueCollection
+            foreach (string key in clientInfo.ClientInfo)
+            {
+                data.Add(key, clientInfo.ClientInfo[key]);
+            }
+
+            JObject result = JObject.Parse(_call.MakeCall(data));
+
+            if (result["result"].ToString() != "success")
+                throw new Exception("An API Error Ocurred", new Exception(result["message"].ToString()));
         }
 
         public AcceptOrder AcceptOrder(int orderID)
