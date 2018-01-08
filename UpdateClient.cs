@@ -13,8 +13,8 @@ namespace WHMCS_API
     public class UpdateClient
     {
         public readonly NameValueCollection ClientInfo;
-        public UpdateClient(int clientId, string Firstname = "", string Lastname = "", string Email = "", string Address1 = "",
-            string City = "", string State = "", string PostCode = "", string CountryCode = "", string PhoneNumber = "",
+        public UpdateClient(int clientId, string Firstname = null, string Lastname = null, string Email = "", string Address1 = null,
+            string City = null, string State = null, string PostCode = null, string CountryCode = "", string PhoneNumber = "",
             string Password = "", bool? NoEmail = null, string CompanyName = "", string Address2 = "",
             int SecurityQuestionID = -1, string SecurityQuestionAnswer = "", string CardType = "",
             string CardNumber = "", string ExpiricyDate = "", string StartDate = "",
@@ -26,19 +26,19 @@ namespace WHMCS_API
                 { EnumUtil.GetString(APIEnums.UpdateClientParams.ClientId), clientId.ToString() }
             };
 
-            if (Firstname != "")
+            if (Firstname != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.Firstname), Firstname);
-            if (Lastname != "")
+            if (Lastname != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.Lastname), Lastname);
             if (Email != "")
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.Email), Email);
-            if (Address1 != "")
+            if (Address1 != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.Address1), Address1);
-            if (City != "")
+            if (City != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.City), City);
-            if (State != "")
+            if (State != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.State), State);
-            if (PostCode != "")
+            if (PostCode != null)
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.Postcode), PostCode);
             if (CountryCode != "")
                 ClientInfo.Add(EnumUtil.GetString(APIEnums.AddClientParams.CountryCode), CountryCode);
