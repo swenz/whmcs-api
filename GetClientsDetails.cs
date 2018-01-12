@@ -110,7 +110,7 @@ namespace WHMCS_API.GetClientsDetails
         public string Status { get; set; }
 
         [JsonProperty("credit")]
-        public string Credit { get; set; }
+        public decimal Credit { get; set; }
 
         [JsonProperty("taxexempt")]
         public bool TaxExempt { get; set; }
