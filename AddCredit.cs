@@ -19,7 +19,7 @@ namespace WHMCS_API
             {
                 { EnumUtil.GetString(APIEnums.AddCreditParams.ClientId), clientId.ToString() },
                 { EnumUtil.GetString(APIEnums.AddCreditParams.Description), description },
-                { EnumUtil.GetString(APIEnums.AddCreditParams.Amount), amount.ToString() },
+                { EnumUtil.GetString(APIEnums.AddCreditParams.Amount), amount.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) },
             };
         }
     }
