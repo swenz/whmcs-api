@@ -118,7 +118,7 @@ namespace WHMCS_API.GetOrders
         public string PaymentMethodName { get; set; }
 
         [JsonProperty("paymentstatus")]
-        public object PaymentStatus { get; set; }
+        public string PaymentStatus { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
